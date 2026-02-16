@@ -4,8 +4,7 @@ resource "docker_image" "image" {
 
 resource "docker_container" "container" {
     name = var.container_name
-    image = docker_image.image.id
-    command = var.command
+    image = docker_image.image.name
     entrypoint = var.entrypoint
     hostname = var.hostname
     must_run = var.must_run

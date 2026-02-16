@@ -22,7 +22,7 @@ variable "entrypoint" {
     # Optional
     description = "The command to use as the Entrypoint for the container. The entrypoint allows you to configure a container to run as an executable"
     type = list(string)
-    default = [""]
+    default = []
 }
 
 variable "hostname" {

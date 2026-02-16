@@ -4,6 +4,8 @@ module "bastion" {
     container_name = "bastion"
     image_name = "ubuntu:latest"
     user = "ubuntu"
+    tty = true
+    must_run = true
     networks_advanced = [
         {
             name = docker_network.network.id
@@ -25,6 +27,8 @@ module "ec2" {
     container_name = "ec2"
     image_name = "ubuntu:latest"
     user = "ubuntu"
+    tty = true
+    must_run = true
     networks_advanced = [
         {
             name = docker_network.network.id
