@@ -1,5 +1,5 @@
 locals {
     common = {
-        terraform_lab_path = "/home/vsnv/REPOSITORIES/terraform-lab-docker"
+        terraform_lab_path = "${var.path}terraform-lab-docker"
     }
 }
