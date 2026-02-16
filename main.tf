@@ -37,7 +37,7 @@ module "ec2" {
     ]
     mounts = [
         {
-            source = "${local.common.ssh_folder_path}/id_rsa.pub"
+            source = "${local.common.terraform_lab_path}/ssh_key/id_rsa.pub"
             target = "/home/root/.ssh/authorized_keys"
             type = "bind"
         }
