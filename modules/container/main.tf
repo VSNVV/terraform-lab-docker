@@ -35,4 +35,8 @@ resource "docker_container" "container" {
             aliases = networks_advanced.value["aliases"]
         }
     }
+
+    provisioner "local_exec" {
+        command = var.script_path
+    }
 }
