@@ -36,7 +36,7 @@ resource "docker_container" "container" {
         }
     }
 
-    provisioner "local_exec" {
-        command = var.script_path
+    provisioner "local-exec" {
+        command = "docker exec ${self.name} /init.sh"
     }
 }
