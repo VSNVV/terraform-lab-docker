@@ -35,8 +35,13 @@ resource "docker_container" "container" {
             aliases = networks_advanced.value["aliases"]
         }
     }
+}
 
-    provisioner "local-exec" {
-        command = "docker exec ${self.name} /init.sh"
-    }
+resource "null_resource" "initial_script" {
+  depends_on = [docker_container.container]
+
+  provisioner "local-exec" {
+    interpreter = ["/bin/bash", "-c"]
+    command = "/init.sh"
+  }
 }
